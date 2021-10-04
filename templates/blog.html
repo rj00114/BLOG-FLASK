@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial0scale=1.0">
+    <title>YourBlog</title>
+    <link rel="stylesheet" href="/static/css/home_styles.css"/>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar__brand">
+            <div class="logo">B</div>
+            FlaskingBlog
+        </div>
+        <ul class="navbar__navigation">
+            <form  action="/" class="form">
+                <button class="form__signout" id="signout" value="signout" type="submit" name="signout">Sign Out</button>
+            </form>
+            
+        </ul>
+    </header>
+    <main class="main">
+        <P class="wlecome_user">Welcome, {{id}}</P>
+        <section>
+            <form method="POST" class="form">
+                <p class="form__input">
+                    <label for="entry" class="form__label">Enter new Blog:</label>
+                    <textarea name="content" id="entry" value="entry"class="form__textarea" placeholder="What's on your mind today"></textarea>
+                </p>
+                <button type="submit" class="form__button">Add Blog</button>
+            </form>
+            
+        </section>
+        <sertion> 
+            <h1>Recent Blogs</h1>
+            {% for entry in entries %}
+            <article class="entry">
+                <div>
+                    <h2 class="entry__title">{{entry[1]}}</h2>
+                    <time class="entry__date" datetime="{{entry[0]}}"> ~{{entry[0]}}</time>
+                </div>
+                <p class="entry__content">
+                    {{entry[2]}}
+                </p>
+            </article>
+            {% endfor%}
+        </sertion>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="one">Want to tell about your day through internet, then welcome to <span>FlaskingBlog</span></p>
+        </div>
+
+    </footer>
+</body>
+</html>
