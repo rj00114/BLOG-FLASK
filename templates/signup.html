@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial0scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="/static/css/login_css.css"/>
+</head>
+<body>
+    <div class="intro">
+        <div class="intro__one">Welcome to</div>
+        <div class="intro__two">YourBlog</div>
+    </div>
+    <form method="POST" class="form">
+        <p class="form__group">
+            <label class="form__label" for="id">User ID:</label>
+            <input class="input" type="text" name="id" id="id" placeholder="Id"/> 
+        </p>
+        <p class="form__group">
+            <label class="form__label" for="email">Email:</label>
+            <input class="input" type="text" name="email" id="email" placeholder="Email"/> 
+        </p>
+        <p class="form__group">
+            <label class="form__label" for="password">Password:</label>
+            <input class="input" type="text" name="password" id="password" placeholder="Password"/> 
+        </p>
+        <p class="form__group">
+            <label class="form__label" for="repassword">Re Enter Password:</label>
+            <input class="input" type="text" name="repassword" id="repassword" placeholder="Re enter password"/> 
+        </p>
+        <button class="button" type="submit">Sign Up</button>
+        <p class="form__group alert">{{result}}</p>
+</body>
+</html>
